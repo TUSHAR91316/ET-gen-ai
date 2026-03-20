@@ -1,0 +1,10 @@
+{
+  "original_variant_id": "linkedin_v2",
+  "channel": "linkedin",
+  "language": "hi",
+  "title": "[HI simulated] What to watch next | Practical takeaways for enterprise content teams",
+  "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n• Draft once, adapt per channel.\n• Compliance as a first-class stage.\n• Localization that preserves meaning.\n• Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+  "metadata": {
+    "simulation": true
+  }
+}

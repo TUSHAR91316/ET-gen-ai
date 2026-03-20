@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Content Ops Agent (Multi-Agent)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+        }
+        h1 {
+            color: #111827;
+            border-bottom: 2px solid #22c55e;
+            padding-bottom: 10px;
+            font-size: 2.2em;
+        }
+        .subtitle {
+            font-size: 1.1em;
+            color: #6b7280;
+            margin-bottom: 25px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .highlight {
+            background-color: #ecfdf5;
+            padding: 14px;
+            border-left: 6px solid #22c55e;
+            border-radius: 6px;
+        }
+        strong { color: #111827; }
+        ul { list-style-type: circle; padding-left: 18px; }
+        li { margin-bottom: 8px; }
+        .footer {
+            margin-top: 50px;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+            font-size: 0.9em;
+            color: #6b7280;
+            text-align: center;
+        }
+        @media print {
+            body { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Enterprise Content Ops Agent</h1>
+    <div class="subtitle">Draft → Compliance → Human Approval → Localization → Multi-Channel Packaging</div>
+
+    <div class="section highlight">
+        <strong>Problem</strong><br>
+        Enterprise content workflows are slow: drafting, legal/brand compliance, localization, and multi-channel packaging often involve iterative rework.
+        The result is delayed turnaround time and inconsistent output.
+    </div>
+
+    <div class="section">
+        <strong>Solution</strong>
+        <ul>
+            <li><strong>Multi-agent pipeline</strong> that creates channel-specific drafts.</li>
+            <li><strong>Compliance guardrails</strong> with required disclaimers + forbidden term checks + tone heuristics.</li>
+            <li><strong>Human-in-the-loop approval</strong> gate with a compliance report before publishing.</li>
+            <li><strong>Localization</strong> that preserves workflow consistency (demo uses simulated localization).</li>
+            <li><strong>Packaging + scheduler</strong> that generates publish-ready payloads and a publish calendar.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <strong>What’s novel</strong>
+        <ul>
+            <li>End-to-end workflow automation (not single-step generation).</li>
+            <li>Auditable trace: every decision + score is saved under `runs/&lt;job_id&gt;/workflow_run.json`.</li>
+            <li>Consumer-like intelligence loop (simulated engagement scoring to choose hooks).</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <strong>Impact Model</strong><br>
+        Back-of-envelope baseline per asset: <strong>~6.75 hours</strong> manual lifecycle.<br>
+        The demo estimates <strong>~60%</strong> cycle-time reduction using guardrail + structured automation assumptions (math + assumptions stated in docs).
+    </div>
+
+    <div class="footer">
+        Hackathon Submission • 2026
+    </div>
+</body>
+</html>
+

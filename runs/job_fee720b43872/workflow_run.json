@@ -1,0 +1,698 @@
+{
+  "job_id": "job_fee720b43872",
+  "request": {
+    "spec": "Launch a compliant content workflow for a product update with required disclaimers",
+    "audience": "enterprise content managers and brand/legal teams",
+    "channels": [
+      "blog",
+      "linkedin"
+    ],
+    "languages": [
+      "hi",
+      "ta"
+    ],
+    "guardrails": {
+      "brand_name": "ET Markets",
+      "required_disclaimers": [
+        "This content is for informational purposes only.",
+        "Not financial advice. Please consult a qualified professional.",
+        "Past performance is not indicative of future results."
+      ],
+      "forbidden_terms": [
+        "guaranteed",
+        "100% sure",
+        "no risk",
+        "guaranteed returns",
+        "certain profit",
+        "guaranteed profit"
+      ],
+      "tone_constraints": {
+        "avoid_excessive_caps": true,
+        "max_exclamation": 3
+      }
+    },
+    "job_id": "job_fee720b43872",
+    "strategy_objective": "Improve turnaround time and content consistency",
+    "human_auto_approval": true
+  },
+  "run_started_at": "2026-03-20T07:14:36.382480+00:00",
+  "run_finished_at": "2026-03-20T07:14:36.385158+00:00",
+  "steps": [
+    {
+      "name": "draft",
+      "started_at": "2026-03-20T07:14:36.383171+00:00",
+      "finished_at": "2026-03-20T07:14:36.383515+00:00",
+      "duration_ms": 0,
+      "agent": "DraftAgent",
+      "summary": "Drafted 4 assets across 2 channels.",
+      "raw_output": {
+        "strategy": {
+          "hooks": [
+            "What to watch next",
+            "The hidden risk",
+            "A practical checklist"
+          ]
+        },
+        "assets": [
+          {
+            "channel": "blog",
+            "variant_id": "blog_v1",
+            "title": "The hidden risk: A ET Markets guide for ET investors",
+            "body": "Summary for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: keep the tone calmer and more decision-oriented.\n\n- Step 1: Convert internal inputs into structured drafts.\n- Step 2: Run compliance guardrails before anything ships.\n- Step 3: Localize with consistent terminology.\n- Step 4: Package per channel and track outcomes.\n\nRequired disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "brand": "ET Markets",
+              "audience": "enterprise content managers and brand/legal teams"
+            }
+          },
+          {
+            "channel": "blog",
+            "variant_id": "blog_v2",
+            "title": "A practical checklist: A ET Markets guide for ET investors",
+            "body": "Summary for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: add a short checklist and a clear next action.\n\n- Step 1: Convert internal inputs into structured drafts.\n- Step 2: Run compliance guardrails before anything ships.\n- Step 3: Localize with consistent terminology.\n- Step 4: Package per channel and track outcomes.\n\nRequired disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "brand": "ET Markets",
+              "audience": "enterprise content managers and brand/legal teams"
+            }
+          },
+          {
+            "channel": "linkedin",
+            "variant_id": "linkedin_v1",
+            "title": "A practical checklist | Practical takeaways for enterprise content teams",
+            "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n\u2022 Draft once, adapt per channel.\n\u2022 Compliance as a first-class stage.\n\u2022 Localization that preserves meaning.\n\u2022 Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nRequired disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "brand": "ET Markets",
+              "audience": "enterprise content managers and brand/legal teams"
+            }
+          },
+          {
+            "channel": "linkedin",
+            "variant_id": "linkedin_v2",
+            "title": "What to watch next | Practical takeaways for enterprise content teams",
+            "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n\u2022 Draft once, adapt per channel.\n\u2022 Compliance as a first-class stage.\n\u2022 Localization that preserves meaning.\n\u2022 Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nRequired disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "brand": "ET Markets",
+              "audience": "enterprise content managers and brand/legal teams"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "compliance_check",
+      "started_at": "2026-03-20T07:14:36.383596+00:00",
+      "finished_at": "2026-03-20T07:14:36.384318+00:00",
+      "duration_ms": 0,
+      "agent": "ComplianceAgent",
+      "summary": "Compliance score=1.0 passed=True (threshold=0.85). Findings=0",
+      "raw_output": {
+        "report": {
+          "overall_score": 1.0,
+          "findings": [],
+          "passed": true,
+          "threshold": 0.85
+        }
+      }
+    },
+    {
+      "name": "approval_gate",
+      "started_at": "2026-03-20T07:14:36.384548+00:00",
+      "finished_at": "2026-03-20T07:14:36.384554+00:00",
+      "duration_ms": 1,
+      "agent": "HumanGate",
+      "summary": "Human decision: True (mode=auto).",
+      "raw_output": {
+        "decision": {
+          "approved": true,
+          "mode": "auto"
+        }
+      }
+    },
+    {
+      "name": "content_intelligence",
+      "started_at": "2026-03-20T07:14:36.384567+00:00",
+      "finished_at": "2026-03-20T07:14:36.384675+00:00",
+      "duration_ms": 0,
+      "agent": "IntelligenceAgent",
+      "summary": "Simulated engagement optimization by selecting best hooks per channel.",
+      "raw_output": {
+        "best_by_channel": {
+          "blog": {
+            "best_variant_id": "blog_v2",
+            "best_title": "A practical checklist: A ET Markets guide for ET investors",
+            "estimated_engagement_score": 0.664
+          },
+          "linkedin": {
+            "best_variant_id": "linkedin_v2",
+            "best_title": "What to watch next | Practical takeaways for enterprise content teams",
+            "estimated_engagement_score": 0.563
+          }
+        },
+        "hooks": [
+          "A practical checklist: A ET Markets guide for ET investors",
+          "What to watch next"
+        ]
+      }
+    },
+    {
+      "name": "localization",
+      "started_at": "2026-03-20T07:14:36.384691+00:00",
+      "finished_at": "2026-03-20T07:14:36.384762+00:00",
+      "duration_ms": 0,
+      "agent": "LocalizationAgent",
+      "summary": "Localized to languages=['hi', 'ta']. Produced 8 variants.",
+      "raw_output": {
+        "localized_assets": [
+          {
+            "original_variant_id": "blog_v1",
+            "channel": "blog",
+            "language": "hi",
+            "title": "[HI simulated] The hidden risk: A ET Markets guide for ET investors",
+            "body": "Saransh for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: keep the tone calmer and more decision-oriented.\n\n- Kadam 1: Convert internal inputs into structured drafts.\n- Kadam 2: Run compliance guardrails before anything ships.\n- Kadam 3: Localize with consistent terminology.\n- Kadam 4: Package per channel and track outcomes.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "simulation": true
+            }
+          },
+          {
+            "original_variant_id": "blog_v1",
+            "channel": "blog",
+            "language": "ta",
+            "title": "[TA simulated] The hidden risk: A ET Markets guide for ET investors",
+            "body": "Surukkam for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: keep the tone calmer and more decision-oriented.\n\n- Padikkattu 1: Convert internal inputs into structured drafts.\n- Padikkattu 2: Run compliance guardrails before anything ships.\n- Padikkattu 3: Localize with consistent terminology.\n- Padikkattu 4: Package per channel and track outcomes.\n\nAvashiya vilakkam: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "simulation": true
+            }
+          },
+          {
+            "original_variant_id": "blog_v2",
+            "channel": "blog",
+            "language": "hi",
+            "title": "[HI simulated] A practical checklist: A ET Markets guide for ET investors",
+            "body": "Saransh for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: add a short checklist and a clear next action.\n\n- Kadam 1: Convert internal inputs into structured drafts.\n- Kadam 2: Run compliance guardrails before anything ships.\n- Kadam 3: Localize with consistent terminology.\n- Kadam 4: Package per channel and track outcomes.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "simulation": true
+            }
+          },
+          {
+            "original_variant_id": "blog_v2",
+            "channel": "blog",
+            "language": "ta",
+            "title": "[TA simulated] A practical checklist: A ET Markets guide for ET investors",
+            "body": "Surukkam for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: add a short checklist and a clear next action.\n\n- Padikkattu 1: Convert internal inputs into structured drafts.\n- Padikkattu 2: Run compliance guardrails before anything ships.\n- Padikkattu 3: Localize with consistent terminology.\n- Padikkattu 4: Package per channel and track outcomes.\n\nAvashiya vilakkam: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "simulation": true
+            }
+          },
+          {
+            "original_variant_id": "linkedin_v1",
+            "channel": "linkedin",
+            "language": "hi",
+            "title": "[HI simulated] A practical checklist | Practical takeaways for enterprise content teams",
+            "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n\u2022 Draft once, adapt per channel.\n\u2022 Compliance as a first-class stage.\n\u2022 Localization that preserves meaning.\n\u2022 Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "simulation": true
+            }
+          },
+          {
+            "original_variant_id": "linkedin_v1",
+            "channel": "linkedin",
+            "language": "ta",
+            "title": "[TA simulated] A practical checklist | Practical takeaways for enterprise content teams",
+            "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n\u2022 Draft once, adapt per channel.\n\u2022 Compliance as a first-class stage.\n\u2022 Localization that preserves meaning.\n\u2022 Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nAvashiya vilakkam: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "simulation": true
+            }
+          },
+          {
+            "original_variant_id": "linkedin_v2",
+            "channel": "linkedin",
+            "language": "hi",
+            "title": "[HI simulated] What to watch next | Practical takeaways for enterprise content teams",
+            "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n\u2022 Draft once, adapt per channel.\n\u2022 Compliance as a first-class stage.\n\u2022 Localization that preserves meaning.\n\u2022 Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "simulation": true
+            }
+          },
+          {
+            "original_variant_id": "linkedin_v2",
+            "channel": "linkedin",
+            "language": "ta",
+            "title": "[TA simulated] What to watch next | Practical takeaways for enterprise content teams",
+            "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n\u2022 Draft once, adapt per channel.\n\u2022 Compliance as a first-class stage.\n\u2022 Localization that preserves meaning.\n\u2022 Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nAvashiya vilakkam: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "simulation": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "packaging",
+      "started_at": "2026-03-20T07:14:36.385054+00:00",
+      "finished_at": "2026-03-20T07:14:36.385120+00:00",
+      "duration_ms": 0,
+      "agent": "PackagingAgent",
+      "summary": "Prepared publish batches=2 for channels=['blog', 'linkedin'].",
+      "raw_output": {
+        "publish_batches": [
+          {
+            "channel": "blog",
+            "language": "hi",
+            "title": "[HI simulated] The hidden risk: A ET Markets guide for ET investors",
+            "body": "Saransh for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: keep the tone calmer and more decision-oriented.\n\n- Kadam 1: Convert internal inputs into structured drafts.\n- Kadam 2: Run compliance guardrails before anything ships.\n- Kadam 3: Localize with consistent terminology.\n- Kadam 4: Package per channel and track outcomes.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "utm_campaign": "content_ops_demo",
+            "scheduled_at": "2026-03-20T09:14:36Z"
+          },
+          {
+            "channel": "linkedin",
+            "language": "hi",
+            "title": "[HI simulated] A practical checklist | Practical takeaways for enterprise content teams",
+            "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n\u2022 Draft once, adapt per channel.\n\u2022 Compliance as a first-class stage.\n\u2022 Localization that preserves meaning.\n\u2022 Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "utm_campaign": "content_ops_demo",
+            "scheduled_at": "2026-03-20T09:14:36Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "impact_model",
+      "started_at": "2026-03-20T07:14:36.385144+00:00",
+      "finished_at": "2026-03-20T07:14:36.385147+00:00",
+      "duration_ms": 1,
+      "agent": "ImpactModel",
+      "summary": "Computed time saved and rework reduction estimates (assumptions stated).",
+      "raw_output": {
+        "assumptions": {
+          "manual_hours_per_asset": 6.75,
+          "assets_count": 4,
+          "draft_time_saved": 0.4,
+          "compliance_rework_reduction": 0.3,
+          "localization_time_saved": 0.55,
+          "packaging_time_saved": 0.2
+        },
+        "estimated_manual_total_hours": 27.0,
+        "estimated_automated_total_hours": 4.08,
+        "time_saved_hours": 22.92,
+        "estimated_rework_reduction": 0.4,
+        "compliance_score": 1.0
+      }
+    }
+  ],
+  "audit_log": [
+    {
+      "timestamp": "2026-03-20T07:14:36.383171+00:00",
+      "agent": "DraftAgent",
+      "step": "draft",
+      "duration_ms": 0,
+      "summary": "Drafted 4 assets across 2 channels.",
+      "raw_output": {
+        "strategy": {
+          "hooks": [
+            "What to watch next",
+            "The hidden risk",
+            "A practical checklist"
+          ]
+        },
+        "assets": [
+          {
+            "channel": "blog",
+            "variant_id": "blog_v1",
+            "title": "The hidden risk: A ET Markets guide for ET investors",
+            "body": "Summary for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: keep the tone calmer and more decision-oriented.\n\n- Step 1: Convert internal inputs into structured drafts.\n- Step 2: Run compliance guardrails before anything ships.\n- Step 3: Localize with consistent terminology.\n- Step 4: Package per channel and track outcomes.\n\nRequired disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "brand": "ET Markets",
+              "audience": "enterprise content managers and brand/legal teams"
+            }
+          },
+          {
+            "channel": "blog",
+            "variant_id": "blog_v2",
+            "title": "A practical checklist: A ET Markets guide for ET investors",
+            "body": "Summary for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: add a short checklist and a clear next action.\n\n- Step 1: Convert internal inputs into structured drafts.\n- Step 2: Run compliance guardrails before anything ships.\n- Step 3: Localize with consistent terminology.\n- Step 4: Package per channel and track outcomes.\n\nRequired disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "brand": "ET Markets",
+              "audience": "enterprise content managers and brand/legal teams"
+            }
+          },
+          {
+            "channel": "linkedin",
+            "variant_id": "linkedin_v1",
+            "title": "A practical checklist | Practical takeaways for enterprise content teams",
+            "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n\u2022 Draft once, adapt per channel.\n\u2022 Compliance as a first-class stage.\n\u2022 Localization that preserves meaning.\n\u2022 Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nRequired disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "brand": "ET Markets",
+              "audience": "enterprise content managers and brand/legal teams"
+            }
+          },
+          {
+            "channel": "linkedin",
+            "variant_id": "linkedin_v2",
+            "title": "What to watch next | Practical takeaways for enterprise content teams",
+            "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n\u2022 Draft once, adapt per channel.\n\u2022 Compliance as a first-class stage.\n\u2022 Localization that preserves meaning.\n\u2022 Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nRequired disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "brand": "ET Markets",
+              "audience": "enterprise content managers and brand/legal teams"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-03-20T07:14:36.383596+00:00",
+      "agent": "ComplianceAgent",
+      "step": "compliance_check",
+      "duration_ms": 0,
+      "summary": "Compliance score=1.0 passed=True (threshold=0.85). Findings=0",
+      "raw_output": {
+        "report": {
+          "overall_score": 1.0,
+          "findings": [],
+          "passed": true,
+          "threshold": 0.85
+        }
+      }
+    },
+    {
+      "timestamp": "2026-03-20T07:14:36.384548+00:00",
+      "agent": "HumanGate",
+      "step": "approval_gate",
+      "duration_ms": 1,
+      "summary": "Human decision: True (mode=auto).",
+      "raw_output": {
+        "decision": {
+          "approved": true,
+          "mode": "auto"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-03-20T07:14:36.384567+00:00",
+      "agent": "IntelligenceAgent",
+      "step": "content_intelligence",
+      "duration_ms": 0,
+      "summary": "Simulated engagement optimization by selecting best hooks per channel.",
+      "raw_output": {
+        "best_by_channel": {
+          "blog": {
+            "best_variant_id": "blog_v2",
+            "best_title": "A practical checklist: A ET Markets guide for ET investors",
+            "estimated_engagement_score": 0.664
+          },
+          "linkedin": {
+            "best_variant_id": "linkedin_v2",
+            "best_title": "What to watch next | Practical takeaways for enterprise content teams",
+            "estimated_engagement_score": 0.563
+          }
+        },
+        "hooks": [
+          "A practical checklist: A ET Markets guide for ET investors",
+          "What to watch next"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-03-20T07:14:36.384691+00:00",
+      "agent": "LocalizationAgent",
+      "step": "localization",
+      "duration_ms": 0,
+      "summary": "Localized to languages=['hi', 'ta']. Produced 8 variants.",
+      "raw_output": {
+        "localized_assets": [
+          {
+            "original_variant_id": "blog_v1",
+            "channel": "blog",
+            "language": "hi",
+            "title": "[HI simulated] The hidden risk: A ET Markets guide for ET investors",
+            "body": "Saransh for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: keep the tone calmer and more decision-oriented.\n\n- Kadam 1: Convert internal inputs into structured drafts.\n- Kadam 2: Run compliance guardrails before anything ships.\n- Kadam 3: Localize with consistent terminology.\n- Kadam 4: Package per channel and track outcomes.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "simulation": true
+            }
+          },
+          {
+            "original_variant_id": "blog_v1",
+            "channel": "blog",
+            "language": "ta",
+            "title": "[TA simulated] The hidden risk: A ET Markets guide for ET investors",
+            "body": "Surukkam for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: keep the tone calmer and more decision-oriented.\n\n- Padikkattu 1: Convert internal inputs into structured drafts.\n- Padikkattu 2: Run compliance guardrails before anything ships.\n- Padikkattu 3: Localize with consistent terminology.\n- Padikkattu 4: Package per channel and track outcomes.\n\nAvashiya vilakkam: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "simulation": true
+            }
+          },
+          {
+            "original_variant_id": "blog_v2",
+            "channel": "blog",
+            "language": "hi",
+            "title": "[HI simulated] A practical checklist: A ET Markets guide for ET investors",
+            "body": "Saransh for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: add a short checklist and a clear next action.\n\n- Kadam 1: Convert internal inputs into structured drafts.\n- Kadam 2: Run compliance guardrails before anything ships.\n- Kadam 3: Localize with consistent terminology.\n- Kadam 4: Package per channel and track outcomes.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "simulation": true
+            }
+          },
+          {
+            "original_variant_id": "blog_v2",
+            "channel": "blog",
+            "language": "ta",
+            "title": "[TA simulated] A practical checklist: A ET Markets guide for ET investors",
+            "body": "Surukkam for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: add a short checklist and a clear next action.\n\n- Padikkattu 1: Convert internal inputs into structured drafts.\n- Padikkattu 2: Run compliance guardrails before anything ships.\n- Padikkattu 3: Localize with consistent terminology.\n- Padikkattu 4: Package per channel and track outcomes.\n\nAvashiya vilakkam: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "simulation": true
+            }
+          },
+          {
+            "original_variant_id": "linkedin_v1",
+            "channel": "linkedin",
+            "language": "hi",
+            "title": "[HI simulated] A practical checklist | Practical takeaways for enterprise content teams",
+            "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n\u2022 Draft once, adapt per channel.\n\u2022 Compliance as a first-class stage.\n\u2022 Localization that preserves meaning.\n\u2022 Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "simulation": true
+            }
+          },
+          {
+            "original_variant_id": "linkedin_v1",
+            "channel": "linkedin",
+            "language": "ta",
+            "title": "[TA simulated] A practical checklist | Practical takeaways for enterprise content teams",
+            "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n\u2022 Draft once, adapt per channel.\n\u2022 Compliance as a first-class stage.\n\u2022 Localization that preserves meaning.\n\u2022 Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nAvashiya vilakkam: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "simulation": true
+            }
+          },
+          {
+            "original_variant_id": "linkedin_v2",
+            "channel": "linkedin",
+            "language": "hi",
+            "title": "[HI simulated] What to watch next | Practical takeaways for enterprise content teams",
+            "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n\u2022 Draft once, adapt per channel.\n\u2022 Compliance as a first-class stage.\n\u2022 Localization that preserves meaning.\n\u2022 Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "simulation": true
+            }
+          },
+          {
+            "original_variant_id": "linkedin_v2",
+            "channel": "linkedin",
+            "language": "ta",
+            "title": "[TA simulated] What to watch next | Practical takeaways for enterprise content teams",
+            "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n\u2022 Draft once, adapt per channel.\n\u2022 Compliance as a first-class stage.\n\u2022 Localization that preserves meaning.\n\u2022 Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nAvashiya vilakkam: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "metadata": {
+              "simulation": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-03-20T07:14:36.385054+00:00",
+      "agent": "PackagingAgent",
+      "step": "packaging",
+      "duration_ms": 0,
+      "summary": "Prepared publish batches=2 for channels=['blog', 'linkedin'].",
+      "raw_output": {
+        "publish_batches": [
+          {
+            "channel": "blog",
+            "language": "hi",
+            "title": "[HI simulated] The hidden risk: A ET Markets guide for ET investors",
+            "body": "Saransh for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: keep the tone calmer and more decision-oriented.\n\n- Kadam 1: Convert internal inputs into structured drafts.\n- Kadam 2: Run compliance guardrails before anything ships.\n- Kadam 3: Localize with consistent terminology.\n- Kadam 4: Package per channel and track outcomes.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "utm_campaign": "content_ops_demo",
+            "scheduled_at": "2026-03-20T09:14:36Z"
+          },
+          {
+            "channel": "linkedin",
+            "language": "hi",
+            "title": "[HI simulated] A practical checklist | Practical takeaways for enterprise content teams",
+            "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n\u2022 Draft once, adapt per channel.\n\u2022 Compliance as a first-class stage.\n\u2022 Localization that preserves meaning.\n\u2022 Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+            "utm_campaign": "content_ops_demo",
+            "scheduled_at": "2026-03-20T09:14:36Z"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-03-20T07:14:36.385144+00:00",
+      "agent": "ImpactModel",
+      "step": "impact_model",
+      "duration_ms": 1,
+      "summary": "Computed time saved and rework reduction estimates (assumptions stated).",
+      "raw_output": {
+        "assumptions": {
+          "manual_hours_per_asset": 6.75,
+          "assets_count": 4,
+          "draft_time_saved": 0.4,
+          "compliance_rework_reduction": 0.3,
+          "localization_time_saved": 0.55,
+          "packaging_time_saved": 0.2
+        },
+        "estimated_manual_total_hours": 27.0,
+        "estimated_automated_total_hours": 4.08,
+        "time_saved_hours": 22.92,
+        "estimated_rework_reduction": 0.4,
+        "compliance_score": 1.0
+      }
+    }
+  ],
+  "compliance": {
+    "overall_score": 1.0,
+    "findings": [],
+    "passed": true,
+    "threshold": 0.85
+  },
+  "approval_decision": {
+    "approved": true,
+    "mode": "auto"
+  },
+  "intelligence": {
+    "best_by_channel": {
+      "blog": {
+        "best_variant_id": "blog_v2",
+        "best_title": "A practical checklist: A ET Markets guide for ET investors",
+        "estimated_engagement_score": 0.664
+      },
+      "linkedin": {
+        "best_variant_id": "linkedin_v2",
+        "best_title": "What to watch next | Practical takeaways for enterprise content teams",
+        "estimated_engagement_score": 0.563
+      }
+    },
+    "hooks": [
+      "A practical checklist: A ET Markets guide for ET investors",
+      "What to watch next"
+    ]
+  },
+  "packaged": {
+    "localized_assets": [
+      {
+        "original_variant_id": "blog_v1",
+        "channel": "blog",
+        "language": "hi",
+        "title": "[HI simulated] The hidden risk: A ET Markets guide for ET investors",
+        "body": "Saransh for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: keep the tone calmer and more decision-oriented.\n\n- Kadam 1: Convert internal inputs into structured drafts.\n- Kadam 2: Run compliance guardrails before anything ships.\n- Kadam 3: Localize with consistent terminology.\n- Kadam 4: Package per channel and track outcomes.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+        "metadata": {
+          "simulation": true
+        }
+      },
+      {
+        "original_variant_id": "blog_v1",
+        "channel": "blog",
+        "language": "ta",
+        "title": "[TA simulated] The hidden risk: A ET Markets guide for ET investors",
+        "body": "Surukkam for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: keep the tone calmer and more decision-oriented.\n\n- Padikkattu 1: Convert internal inputs into structured drafts.\n- Padikkattu 2: Run compliance guardrails before anything ships.\n- Padikkattu 3: Localize with consistent terminology.\n- Padikkattu 4: Package per channel and track outcomes.\n\nAvashiya vilakkam: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+        "metadata": {
+          "simulation": true
+        }
+      },
+      {
+        "original_variant_id": "blog_v2",
+        "channel": "blog",
+        "language": "hi",
+        "title": "[HI simulated] A practical checklist: A ET Markets guide for ET investors",
+        "body": "Saransh for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: add a short checklist and a clear next action.\n\n- Kadam 1: Convert internal inputs into structured drafts.\n- Kadam 2: Run compliance guardrails before anything ships.\n- Kadam 3: Localize with consistent terminology.\n- Kadam 4: Package per channel and track outcomes.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+        "metadata": {
+          "simulation": true
+        }
+      },
+      {
+        "original_variant_id": "blog_v2",
+        "channel": "blog",
+        "language": "ta",
+        "title": "[TA simulated] A practical checklist: A ET Markets guide for ET investors",
+        "body": "Surukkam for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: add a short checklist and a clear next action.\n\n- Padikkattu 1: Convert internal inputs into structured drafts.\n- Padikkattu 2: Run compliance guardrails before anything ships.\n- Padikkattu 3: Localize with consistent terminology.\n- Padikkattu 4: Package per channel and track outcomes.\n\nAvashiya vilakkam: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+        "metadata": {
+          "simulation": true
+        }
+      },
+      {
+        "original_variant_id": "linkedin_v1",
+        "channel": "linkedin",
+        "language": "hi",
+        "title": "[HI simulated] A practical checklist | Practical takeaways for enterprise content teams",
+        "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n\u2022 Draft once, adapt per channel.\n\u2022 Compliance as a first-class stage.\n\u2022 Localization that preserves meaning.\n\u2022 Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+        "metadata": {
+          "simulation": true
+        }
+      },
+      {
+        "original_variant_id": "linkedin_v1",
+        "channel": "linkedin",
+        "language": "ta",
+        "title": "[TA simulated] A practical checklist | Practical takeaways for enterprise content teams",
+        "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n\u2022 Draft once, adapt per channel.\n\u2022 Compliance as a first-class stage.\n\u2022 Localization that preserves meaning.\n\u2022 Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nAvashiya vilakkam: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+        "metadata": {
+          "simulation": true
+        }
+      },
+      {
+        "original_variant_id": "linkedin_v2",
+        "channel": "linkedin",
+        "language": "hi",
+        "title": "[HI simulated] What to watch next | Practical takeaways for enterprise content teams",
+        "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n\u2022 Draft once, adapt per channel.\n\u2022 Compliance as a first-class stage.\n\u2022 Localization that preserves meaning.\n\u2022 Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+        "metadata": {
+          "simulation": true
+        }
+      },
+      {
+        "original_variant_id": "linkedin_v2",
+        "channel": "linkedin",
+        "language": "ta",
+        "title": "[TA simulated] What to watch next | Practical takeaways for enterprise content teams",
+        "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n\u2022 Draft once, adapt per channel.\n\u2022 Compliance as a first-class stage.\n\u2022 Localization that preserves meaning.\n\u2022 Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nAvashiya vilakkam: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+        "metadata": {
+          "simulation": true
+        }
+      }
+    ],
+    "publish_batches": [
+      {
+        "channel": "blog",
+        "language": "hi",
+        "title": "[HI simulated] The hidden risk: A ET Markets guide for ET investors",
+        "body": "Saransh for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: keep the tone calmer and more decision-oriented.\n\n- Kadam 1: Convert internal inputs into structured drafts.\n- Kadam 2: Run compliance guardrails before anything ships.\n- Kadam 3: Localize with consistent terminology.\n- Kadam 4: Package per channel and track outcomes.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+        "utm_campaign": "content_ops_demo",
+        "scheduled_at": "2026-03-20T09:14:36Z"
+      },
+      {
+        "channel": "linkedin",
+        "language": "hi",
+        "title": "[HI simulated] A practical checklist | Practical takeaways for enterprise content teams",
+        "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n\u2022 Draft once, adapt per channel.\n\u2022 Compliance as a first-class stage.\n\u2022 Localization that preserves meaning.\n\u2022 Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+        "utm_campaign": "content_ops_demo",
+        "scheduled_at": "2026-03-20T09:14:36Z"
+      }
+    ]
+  },
+  "estimated_impact": {
+    "assumptions": {
+      "manual_hours_per_asset": 6.75,
+      "assets_count": 4,
+      "draft_time_saved": 0.4,
+      "compliance_rework_reduction": 0.3,
+      "localization_time_saved": 0.55,
+      "packaging_time_saved": 0.2
+    },
+    "estimated_manual_total_hours": 27.0,
+    "estimated_automated_total_hours": 4.08,
+    "time_saved_hours": 22.92,
+    "estimated_rework_reduction": 0.4,
+    "compliance_score": 1.0
+  }
+}

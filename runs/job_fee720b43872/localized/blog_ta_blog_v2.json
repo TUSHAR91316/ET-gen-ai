@@ -1,0 +1,10 @@
+{
+  "original_variant_id": "blog_v2",
+  "channel": "blog",
+  "language": "ta",
+  "title": "[TA simulated] A practical checklist: A ET Markets guide for ET investors",
+  "body": "Surukkam for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: add a short checklist and a clear next action.\n\n- Padikkattu 1: Convert internal inputs into structured drafts.\n- Padikkattu 2: Run compliance guardrails before anything ships.\n- Padikkattu 3: Localize with consistent terminology.\n- Padikkattu 4: Package per channel and track outcomes.\n\nAvashiya vilakkam: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+  "metadata": {
+    "simulation": true
+  }
+}

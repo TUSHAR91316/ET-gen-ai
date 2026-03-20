@@ -1,0 +1,18 @@
+[
+  {
+    "channel": "blog",
+    "language": "hi",
+    "title": "[HI simulated] The hidden risk: A ET Markets guide for ET investors",
+    "body": "Saransh for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: keep the tone calmer and more decision-oriented.\n\n- Kadam 1: Convert internal inputs into structured drafts.\n- Kadam 2: Run compliance guardrails before anything ships.\n- Kadam 3: Localize with consistent terminology.\n- Kadam 4: Package per channel and track outcomes.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+    "utm_campaign": "content_ops_demo",
+    "scheduled_at": "2026-03-20T09:14:36Z"
+  },
+  {
+    "channel": "linkedin",
+    "language": "hi",
+    "title": "[HI simulated] A practical checklist | Practical takeaways for enterprise content teams",
+    "body": "Enterprise content teams: Launch a compliant content workflow for a product update with required disclaimers\n\n• Draft once, adapt per channel.\n• Compliance as a first-class stage.\n• Localization that preserves meaning.\n• Publish with an audit trail.\n\nIf you want faster cycle time without losing trust, start with guardrails + approvals.\n\nAavashyak disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+    "utm_campaign": "content_ops_demo",
+    "scheduled_at": "2026-03-20T09:14:36Z"
+  }
+]

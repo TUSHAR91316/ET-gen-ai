@@ -1,0 +1,10 @@
+{
+  "channel": "blog",
+  "variant_id": "blog_v2",
+  "title": "A practical checklist: A ET Markets guide for ET investors",
+  "body": "Summary for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: add a short checklist and a clear next action.\n\n- Step 1: Convert internal inputs into structured drafts.\n- Step 2: Run compliance guardrails before anything ships.\n- Step 3: Localize with consistent terminology.\n- Step 4: Package per channel and track outcomes.\n\nRequired disclaimer: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+  "metadata": {
+    "brand": "ET Markets",
+    "audience": "enterprise content managers and brand/legal teams"
+  }
+}

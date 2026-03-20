@@ -1,0 +1,10 @@
+{
+  "original_variant_id": "blog_v1",
+  "channel": "blog",
+  "language": "ta",
+  "title": "[TA simulated] The hidden risk: A ET Markets guide for ET investors",
+  "body": "Surukkam for enterprise content managers and brand/legal teams: Launch a compliant content workflow for a product update with required disclaimers\n\nVariant note: keep the tone calmer and more decision-oriented.\n\n- Padikkattu 1: Convert internal inputs into structured drafts.\n- Padikkattu 2: Run compliance guardrails before anything ships.\n- Padikkattu 3: Localize with consistent terminology.\n- Padikkattu 4: Package per channel and track outcomes.\n\nAvashiya vilakkam: This content is for informational purposes only. Not financial advice. Please consult a qualified professional. Past performance is not indicative of future results.",
+  "metadata": {
+    "simulation": true
+  }
+}
