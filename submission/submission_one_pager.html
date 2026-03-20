@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResQAI: Hyper-Local Generative Disaster Response Coordinator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: #e74c3c;
+            margin-top: 30px;
+            font-size: 1.5em;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            background-color: #fce4ec;
+            /* Light pink/red tint */
+            padding: 15px;
+            border-left: 5px solid #e74c3c;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+
+        ul {
+            list-style-type: circle;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            text-align: center;
+        }
+
+        @media print {
+            body {
+                padding: 20px;
+            }
+
+            a {
+                text-decoration: none;
+                color: #333;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>ResQAI</h1>
+    <div class="subtitle">Hyper-Local Generative Disaster Response Coordinator</div>
+
+    <div class="section highlight">
+        <strong>Problem Statement</strong><br>
+        In the immediate aftermath of natural disasters (earthquakes, floods, wildfires), conventional communication
+        often fails. Emergency responders are overwhelmed by fragmented data—distress calls from social media, satellite
+        imagery, and IoT sensor streams—leading to delayed response times for critical rescues. There is no unified
+        system that can instantly synthesize this multimodal "noise" into actionable, hyper-local rescue plans for
+        on-ground teams.
+    </div>
+
+    <div class="section">
+        <h2>Motivation</h2>
+        <p>Disaster response is a race against time. The inspiration comes from the "Golden Hour" principle—survival
+            rates drop drastically after the first 60 minutes. Current systems are reactive and siloed. ResQAI is
+            designed to be a <em>proactive</em>, intelligent agent that actively coordinates the response, acting as a
+            "digital dispatcher" that reasons through chaotic information to save lives.</p>
+    </div>
+
+    <div class="section">
+        <h2>Application</h2>
+        <ul>
+            <li><strong>Use Case:</strong> A centralized command center dashboard for disaster relief agencies (e.g.,
+                NDRF, Red Cross) and a mobile companion app for field units.</li>
+            <li><strong>Target Users:</strong> Incident Commanders, Search and Rescue (SAR) teams, and volunteers.</li>
+            <li><strong>Deployment:</strong> High-risk zones (e.g., seismic belts, flood-prone deltas) and smart cities
+                integrated with emergency grids.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Proposed Method</h2>
+        <p>ResQAI uses a <strong>Retrieval-Augmented Generation (RAG)</strong> pipeline powered by a Large Language
+            Model (e.g., Gemini Pro or GPT-4).</p>
+        <ol>
+            <li><strong>Multi-Modal Ingestion:</strong> Aggregates text (tweets, SMS), Audio (emergency calls), and
+                Vision (drone/satellite assessment).</li>
+            <li><strong>Graph-RAG Knowledge Base:</strong> Constructs a dynamic Knowledge Graph linking people, hazards,
+                and resources (e.g., "Person trapped" -> "Building B collapsed" -> "Road C blocked").</li>
+            <li><strong>Generative Planning Agent:</strong> Queries this graph to generate optimal route plans and
+                resource allocation strategies.</li>
+            <li><strong>Feedback Loop:</strong> integrates real-time field updates to refine the graph instantly.</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Datasets & Data Sources</h2>
+        <ul>
+            <li><strong>xView2 / CrisisMMD:</strong> For damage assessment model validation.</li>
+            <li><strong>Twitter Earthquake Dataset / NIST Trec-IS:</strong> For urgency classification training.</li>
+            <li><strong>OpenStreetMap (OSM):</strong> For geospatial grounding.</li>
+            <li><strong>Simulated Emergency Calls:</strong> Synthetic privacy-safe data for testing.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Experiments & Validation</h2>
+        <p>We will simulate a "Flood Scenario" in a digital twin city environment. Key metrics include:</p>
+        <ul>
+            <li><strong>Response Latency:</strong> Time from data ingestion to actionable plan generation.</li>
+            <li><strong>Precision/Recall:</strong> Accuracy of identifying high-priority rescue targets.</li>
+            <li><strong>Hallucination Rate:</strong> Ensuring the AI uses only verified map/resource data.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Novelty & Scope to Scale</h2>
+        <p>Unlike standard dashboards that visualize data, ResQAI <em>coordinates</em> logistics. The use of
+            <strong>Graph-RAG</strong> for disaster context preserves spatial and relational information often lost in
+            vector-only stores.</p>
+        <p><strong>Scope:</strong> Scalable to Smart Cities for traffic management or large-scale event crowd control.
+            Can operate offline (Edge AI) if cloud connectivity is lost.</p>
+    </div>
+
+    <div class="footer">
+        ResQAI - GenAI Hackathon Submission &copy; 2026
+    </div>
+
+</body>
+
+</html>
