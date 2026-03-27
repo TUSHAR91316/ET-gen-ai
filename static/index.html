@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Content Ops Agent</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="background-anim"></div>
+    <div class="container">
+        <header>
+            <h1><span class="gradient-text">Enterprise Content Ops</span> Agent</h1>
+            <p>Multi-agent pipeline: Draft → Compliance Guardrails → Human Approval → Localization → Packaging → Publish</p>
+        </header>
+
+        <main class="grid-layout">
+            <!-- Sidebar for Inputs -->
+            <aside class="glass-panel input-section">
+                <h2>Content Brief</h2>
+                <form id="content-form">
+                    <div class="form-group">
+                        <label for="spec">Spec / Internal Notes</label>
+                        <textarea id="spec" rows="4">Launch a new product update page and social posts.
+Include brand-safe language and required disclaimers.
+Localize for Indian audiences.</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="audience">Target Audience</label>
+                        <input type="text" id="audience" value="enterprise content managers and brand/legal teams">
+                    </div>
+                    
+                    <div class="form-group row">
+                        <div class="col">
+                            <label>Channels</label>
+                            <label class="checkbox-label"><input type="checkbox" name="channels" value="blog" checked> Blog</label>
+                            <label class="checkbox-label"><input type="checkbox" name="channels" value="linkedin" checked> LinkedIn</label>
+                            <label class="checkbox-label"><input type="checkbox" name="channels" value="email"> Email</label>
+                        </div>
+                        <div class="col">
+                            <label>Languages</label>
+                            <label class="checkbox-label"><input type="checkbox" name="languages" value="hi" checked> Hindi (HI)</label>
+                            <label class="checkbox-label"><input type="checkbox" name="languages" value="ta" checked> Tamil (TA)</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="compliance">Compliance Strictness (<span id="comp-val">0.85</span>)</label>
+                        <input type="range" id="compliance" min="0.6" max="0.98" step="0.01" value="0.85" oninput="document.getElementById('comp-val').innerText = this.value">
+                    </div>
+
+                    <button type="submit" id="generate-btn" class="btn-primary">
+                        <span class="spinner hidden" id="gen-spinner"></span> 
+                        Generate Drafts & Report
+                    </button>
+                    <div id="gen-error" class="error-msg hidden"></div>
+                </form>
+            </aside>
+
+            <!-- Main Display Area -->
+            <section class="display-section" id="results-area" style="display: none;">
+                
+                <!-- Compliance Report -->
+                <div class="glass-panel compliance-area">
+                    <h2><span class="icon">🛡️</span> Compliance Gate</h2>
+                    <div class="compliance-grid">
+                        <div class="metric">
+                            <span class="label">Score</span>
+                            <span class="value" id="comp-score">--</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Status</span>
+                            <span class="badge" id="comp-status">Passed</span>
+                        </div>
+                    </div>
+                    <div id="findings-container" class="findings-list"></div>
+                </div>
+
+                <!-- Drafts Preview -->
+                <div class="glass-panel drafts-area">
+                    <h2><span class="icon">✍️</span> Draft Preview</h2>
+                    <div class="tabs" id="channel-tabs"></div>
+                    <div class="tab-content" id="drafts-content"></div>
+                </div>
+
+                <!-- Approval Actions -->
+                <div class="glass-panel action-area" id="action-area">
+                    <h2>Approval & Workflow</h2>
+                    <div class="workflow-actions">
+                        <div class="approval-toggle">
+                            <label><input type="radio" name="decision" value="Approve" checked> Approve</label>
+                            <label><input type="radio" name="decision" value="Request edits"> Request Edits</label>
+                        </div>
+                        <div class="form-group" id="feedback-group" style="display:none; margin-top: 15px;">
+                            <label>Edit Notes</label>
+                            <textarea id="human-feedback" rows="2" placeholder="e.g. use softer claims..."></textarea>
+                        </div>
+                        <button id="workflow-run-btn" class="btn-success" style="margin-top:20px;">
+                            <span class="spinner hidden" id="run-spinner"></span>
+                            Execute Publishing Workflow
+                        </button>
+                        <div id="run-error" class="error-msg hidden"></div>
+                    </div>
+                </div>
+
+                <!-- Publish Calendar & ROI (shown after workflow run) -->
+                <div class="glass-panel publish-area" id="final-results" style="display:none;">
+                    <h2><span class="icon">🚀</span> Publish Calendar</h2>
+                    <div id="publish-batches" class="batches-grid"></div>
+
+                    <h2 style="margin-top: 30px;"><span class="icon">📈</span> Impact Model (ROI)</h2>
+                    <div id="impact-container" class="impact-metrics"></div>
+                </div>
+
+            </section>
+            
+            <section class="placeholder-section" id="placeholder-area">
+                <div class="empty-state">
+                    <div class="pulse-ring"></div>
+                    <h3>Ready to generate</h3>
+                    <p>Fill out the brief and click generate to invoke the AI pipeline.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container"></div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

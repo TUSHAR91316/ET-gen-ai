@@ -12,19 +12,26 @@ creation, compliance guardrails + audit reporting, localization, multi-channel p
 
 ## Setup
 
-1. Install dependencies:
+1. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
 
-2. Run the Streamlit demo:
+2. **Configure API Keys:**
+   Copy `.env.example` to `.env` and add your Hugging Face API key.
    ```bash
-   streamlit run app.py
+   cp .env.example .env
    ```
 
-3. Run the CLI workflow (includes audit log output):
+3. **Run the Enterprise Web App (FastAPI + HTML/CSS/JS):**
    ```bash
-   python run_workflow.py --auto-approve --spec "Launch a product update page and social posts with compliance guardrails"
+   python src/server.py
+   ```
+   *Then open `http://localhost:8000` in your browser.*
+
+4. **Run the CLI workflow:**
+   ```bash
+   python src/cli.py --auto-approve --spec "Launch a product update page and social posts with compliance guardrails"
    ```
 
 ## Demo workflow (what to show on video)
@@ -35,12 +42,14 @@ creation, compliance guardrails + audit reporting, localization, multi-channel p
 4. Click **Run Full Workflow**
 5. Show **Publish Calendar** payloads + localized variants
 
-## Project Structure (key files)
+## Project Structure
 
-- `enterprise_content_ops.py`: core multi-agent workflow implementation
-- `app.py`: Streamlit UI with human approval gate
-- `run_workflow.py`: CLI runner + optional manual gate
-- `runs/<job_id>/`: workflow artifacts (audit + generated payloads)
+- `src/engine.py`: core multi-agent workflow implementation featuring **Hugging Face** integration.
+- `src/server.py`: FastAPI backend exposing the workflow.
+- `src/cli.py`: CLI runner + optional manual gate.
+- `static/`: Premium glassmorphism Web UI (`index.html`, `style.css`, `app.js`).
+- `runs/<job_id>/`: workflow artifacts (audit + generated payloads).
+- `bonus_demos/`: Alternative projects & PDFs.
 
 ## Architecture (roles & communication)
 

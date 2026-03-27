@@ -4,9 +4,40 @@ import random
 import re
 import time
 import uuid
+import logging
 from dataclasses import dataclass, asdict, field
 from datetime import datetime, timezone
 from typing import Any, Callable, Dict, List, Optional, Tuple
+
+# Enable logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
+logger = logging.getLogger("enterprise_ops")
+
+try:
+    from huggingface_hub import InferenceClient
+except ImportError:
+    InferenceClient = None
+
+hf_token = os.environ.get("HUGGINGFACE_API_KEY")
+hf_client = InferenceClient(token=hf_token) if InferenceClient and hf_token and hf_token != "your_api_key_here" else None
+
+def generate_text_with_llm(prompt: str, max_new_tokens: int = 300) -> Optional[str]:
+    if not hf_client:
+        return None
+    try:
+        logger.info("Calling Hugging Face Inference API...")
+        # Using a fast instruction-tuned model
+        response = hf_client.text_generation(
+            prompt,
+            model="mistralai/Mixtral-8x7B-Instruct-v0.1",
+            max_new_tokens=max_new_tokens,
+            temperature=0.7,
+            return_full_text=False
+        )
+        return response.strip()
+    except Exception as e:
+        logger.error(f"Hugging Face API call failed: {e}")
+        return None
 
 
 CHANNELS_DEFAULT: List[str] = ["blog", "linkedin", "email"]
@@ -209,8 +240,21 @@ class DraftAgent:
     ) -> str:
         required = guardrails.get("required_disclaimers", [])
         disclaimers = " ".join(required)
+        
+        # 1. Try real LLM generation
+        prompt = f"Write a professional {channel} post for {audience} about: {spec}. Include the disclaimer at the end: {disclaimers}."
+        if variant_idx == 0:
+            prompt += " Tone should be calmer and decision-oriented."
+        else:
+            prompt += " Tone should include a short checklist and a clear next action."
+            
+        generated_body = generate_text_with_llm(f"[INST] {prompt} [/INST]")
+        
+        if generated_body:
+            return generated_body
 
-        # Keep it brand-consistent: no risky claims, focus on process + clarity.
+        # 2. Fallback to simulated generation
+        logger.info(f"Falling back to simulated draft for {channel}")
         if channel == "blog":
             lead = f"Summary for {audience}: {spec}"
             bullets = [
@@ -344,6 +388,21 @@ class ComplianceAgent:
                         suggested_fix="Reduce excitement punctuation; use one exclamation maximum.",
                     )
                 )
+                
+            # LLM Vibe Check
+            if hf_client:
+                prompt = f"Analyze this text for enterprise brand safety. Is it professional? Answer YES or NO.\nText: {text}"
+                vibe = generate_text_with_llm(f"[INST] {prompt} [/INST]", max_new_tokens=10)
+                if vibe and "no" in vibe.lower():
+                    findings.append(
+                        ComplianceFinding(
+                            rule_id="llm_vibe_check",
+                            severity="med",
+                            message="AI detected potential brand safety or tone issues.",
+                            evidence="AI Confidence Flag",
+                            suggested_fix="Review the text for overly aggressive, unprofessional, or off-brand messaging.",
+                        )
+                    )
 
         # Compute overall score: start at 1.0 and penalize by severity.
         score = 1.0

@@ -3,8 +3,9 @@ import json
 import os
 from typing import Any, Dict
 
-from enterprise_content_ops import ContentOpsWorkflow, ContentRequest, DEFAULT_GUARDRAILS
+from engine import ContentOpsWorkflow, ContentRequest, DEFAULT_GUARDRAILS
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="Enterprise Content Lifecycle Agent (demo runner)")
@@ -13,7 +14,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--channels", type=str, required=False, default="blog,linkedin,email")
     p.add_argument("--languages", type=str, required=False, default="hi,ta")
     p.add_argument("--auto-approve", action="store_true", help="Skip manual approval gate.")
-    p.add_argument("--out", type=str, required=False, default="runs")
+    p.add_argument("--out", type=str, required=False, default=os.path.join(BASE_DIR, "runs"))
     return p.parse_args()
 
 
