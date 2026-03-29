@@ -34,7 +34,7 @@ creation, compliance guardrails + audit reporting, localization, multi-channel p
    python src/cli.py --auto-approve --spec "Launch a product update page and social posts with compliance guardrails"
    ```
 
-## Demo workflow (what to show on video)
+## Demo workflow
 
 1. Generate **Draft + Compliance Report** in the UI
 2. Review compliance findings (tone + forbidden terms + disclaimers)
