@@ -21,7 +21,7 @@ except ImportError:
 hf_token = os.environ.get("HUGGINGFACE_API_KEY")
 hf_client = InferenceClient(token=hf_token) if InferenceClient and hf_token and hf_token != "your_api_key_here" else None
 
-def generate_text_with_llm(prompt: str, max_new_tokens: int = 300) -> Optional[str]:
+def generate_text_with_llm(prompt: str, max_new_tokens: int = 800) -> Optional[str]:
     if not hf_client:
         return None
     try:
@@ -242,11 +242,19 @@ class DraftAgent:
         disclaimers = " ".join(required)
         
         # 1. Try real LLM generation
-        prompt = f"Write a professional {channel} post for {audience} about: {spec}. Include the disclaimer at the end: {disclaimers}."
+        system_prompt = (
+            "You are an elite Enterprise Content Strategist and Copywriter. "
+            "Your writing is highly engaging, grammatically flawless, and perfectly formatted using Markdown. "
+            "Use emojis tastefully, include bold text for emphasis, and use bullet points where appropriate."
+        )
+        
+        prompt =f"{system_prompt}\n\nTask: Write a professional and highly engaging {channel} post designed for {audience}. "
+        prompt += f"\nTopic / Spec: {spec}\n\nMandatory Requirement: You MUST include this exact disclaimer at the very end of your response: '{disclaimers}'."
+        
         if variant_idx == 0:
-            prompt += " Tone should be calmer and decision-oriented."
+            prompt += "\nTone Directive: Calm, authoritative, and decision-oriented. Focus on long-term strategy and risk management."
         else:
-            prompt += " Tone should include a short checklist and a clear next action."
+            prompt += "\nTone Directive: Actionable, energetic, and practical. Include a short 3-step checklist and a very clear call-to-action (CTA)."
             
         generated_body = generate_text_with_llm(f"[INST] {prompt} [/INST]")
         

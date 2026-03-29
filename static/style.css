@@ -313,6 +313,50 @@ button {
     color: var(--text-muted);
 }
 
+/* Markdown Rendering Inside Draft Box */
+.md-content {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.md-content h1, .md-content h2, .md-content h3 {
+    color: var(--primary);
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.md-content p {
+    margin-bottom: 12px;
+}
+
+.md-content ul, .md-content ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.md-content li {
+    margin-bottom: 6px;
+}
+
+.md-content strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.md-content blockquote {
+    border-left: 3px solid var(--primary);
+    padding-left: 10px;
+    color: var(--text-muted);
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 12px;
+    border-radius: 0 4px 4px 0;
+    margin: 10px 0;
+}
+
 /* Empty State */
 .placeholder-section {
     display: flex;

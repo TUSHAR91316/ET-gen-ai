@@ -119,10 +119,18 @@ function renderPreview(data) {
         contentDiv.style.display = first ? 'block' : 'none';
         
         assets.forEach(a => {
+            const rawBody = a.metadata?.simulation ? a.body : a.body;
+            let renderedHtml;
+            try {
+                renderedHtml = typeof marked !== 'undefined' ? marked.parse(rawBody) : `<pre>${rawBody}</pre>`;
+            } catch (e) {
+                renderedHtml = `<pre>${rawBody}</pre>`;
+            }
+
             contentDiv.innerHTML += `
                 <div class="draft-box">
                     <h4>${a.variant_id}: ${a.title}</h4>
-                    <pre>${a.body}</pre>
+                    <div class="md-content">${renderedHtml}</div>
                 </div>
             `;
         });
@@ -253,10 +261,10 @@ function renderFinalResults(runData) {
 function setLoading(isLoad) {
     if (isLoad) {
         generateBtn.disabled = true;
-        genSpinner.classList.remove('hidden');
+        generateBtn.innerHTML = `<span class="spinner" id="gen-spinner"></span> Initiating AI Pipeline...`;
     } else {
         generateBtn.disabled = false;
-        genSpinner.classList.add('hidden');
+        generateBtn.innerHTML = `<span class="spinner hidden" id="gen-spinner"></span> Generate Drafts & Report`;
     }
 }
 
